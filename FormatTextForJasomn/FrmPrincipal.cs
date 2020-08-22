@@ -17,21 +17,56 @@ namespace FormatTextForJasomn
         {
             InitializeComponent();
             AddLog("Insira a legenda completa...");
+            lbxType.Items.Add("video");
+            lbxType.Items.Add("article");
+        }
+
+        private bool checkControls()
+        {
+
+            bool bOk = true;
+            if (txtTitle.Text == "")
+                bOk = false;
+
+            if (txtAuthor.Text == "")
+                bOk = false;
+
+            if (txtTextInput.Text == "")
+                bOk = false;
+
+            if (txtUrl.Text == "")
+                bOk = false;
+
+            if (lbxType.SelectedItem == null)
+                bOk = false;
+
+            if (!bOk)
+            {
+                MessageBox.Show(":l", "Preencha todos os campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return false;
+            }
+
+            return bOk;
         }
 
         private void btnFormatText_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtTextInput.Text == "")
+
+                if (!checkControls())
                     return;
 
+                StringBuilder text = new StringBuilder();
+                text.Append("{\r\n");
+                text.Append("\"title\":\"" + txtTitle.Text + "\",\r\n");
+                text.Append("\"author\":\"" + txtAuthor.Text + "\",\r\n");
+
                 string sText = txtTextInput.Text;
-                char[] trimChars = { '"', '(', ')', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ':' };
+                char[] trimChars = { '"' };
                 for (int i = 0; i < trimChars.Length; i++)
                 {
                     sText = sText.Replace(trimChars[i], '$');
-
                 }
 
                 sText = sText.Replace("$", "");
@@ -39,14 +74,18 @@ namespace FormatTextForJasomn
                 sText = sText.Replace("\n", "");
                 sText = sText.Replace("\r\n", "");
 
+                text.Append("\"body\":\"" + sText + "\",\r\n");
+                text.Append("\"type\":\"" + lbxType.SelectedItem + "\",\r\n");
+                text.Append("\"url\":\"" + txtUrl.Text + "\"\r\n");
+                text.Append("}");
 
-                string sPathFile = Directory.GetCurrentDirectory() + @"\BodyJson.txt";
+                string sPathFile = Directory.GetCurrentDirectory() + $@"\{txtTitle.Text }.JSON";
                 if (File.Exists(sPathFile))
                     File.Delete(sPathFile);
 
                 using (StreamWriter stw = new StreamWriter(sPathFile))
                 {
-                    stw.WriteLine(sText);
+                    stw.WriteLine(text.ToString());
                     stw.AutoFlush = true;
                     stw.Close();
                 }
