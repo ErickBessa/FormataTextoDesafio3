@@ -33,14 +33,14 @@
             this.txtLog = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Informações = new System.Windows.Forms.GroupBox();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbxType = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUrl = new System.Windows.Forms.TextBox();
-            this.lbxType = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.Informações.SuspendLayout();
             this.SuspendLayout();
@@ -102,46 +102,13 @@
             this.Informações.TabStop = false;
             this.Informações.Text = "Informações";
             // 
-            // txtTitle
+            // lbxType
             // 
-            this.txtTitle.Location = new System.Drawing.Point(57, 28);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(204, 20);
-            this.txtTitle.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Title:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Atuhor:";
-            // 
-            // txtAuthor
-            // 
-            this.txtAuthor.Location = new System.Drawing.Point(57, 58);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(204, 20);
-            this.txtAuthor.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Title:";
+            this.lbxType.FormattingEnabled = true;
+            this.lbxType.Location = new System.Drawing.Point(57, 84);
+            this.lbxType.Name = "lbxType";
+            this.lbxType.Size = new System.Drawing.Size(204, 17);
+            this.lbxType.TabIndex = 8;
             // 
             // label4
             // 
@@ -159,13 +126,46 @@
             this.txtUrl.Size = new System.Drawing.Size(204, 20);
             this.txtUrl.TabIndex = 6;
             // 
-            // lbxType
+            // label3
             // 
-            this.lbxType.FormattingEnabled = true;
-            this.lbxType.Location = new System.Drawing.Point(57, 84);
-            this.lbxType.Name = "lbxType";
-            this.lbxType.Size = new System.Drawing.Size(204, 17);
-            this.lbxType.TabIndex = 8;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Type:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Atuhor:";
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.Location = new System.Drawing.Point(57, 58);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(204, 20);
+            this.txtAuthor.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Title:";
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(57, 28);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(204, 20);
+            this.txtTitle.TabIndex = 0;
             // 
             // FrmPrincipal
             // 
@@ -178,6 +178,7 @@
             this.Controls.Add(this.txtTextInput);
             this.Name = "FrmPrincipal";
             this.Text = "FormatTextEbs";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Informações.ResumeLayout(false);

@@ -16,7 +16,7 @@ namespace FormatTextForJasomn
         public FrmPrincipal()
         {
             InitializeComponent();
-            AddLog("Insira a legenda completa...");
+            AddLog("Insira as informacoes...");
             lbxType.Items.Add("video");
             lbxType.Items.Add("article");
         }
@@ -112,6 +112,11 @@ namespace FormatTextForJasomn
                 txtLog.Select(txtLog.Text.Length - 1, 0);
                 txtLog.ScrollToCaret();
             }
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
