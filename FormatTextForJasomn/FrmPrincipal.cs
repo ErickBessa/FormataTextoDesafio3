@@ -42,7 +42,7 @@ namespace FormatTextForJasomn
 
             if (!bOk)
             {
-                MessageBox.Show(":l", "Preencha todos os campos", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show( "Preencha todos os campos",":(", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return false;
             }
 
@@ -79,7 +79,7 @@ namespace FormatTextForJasomn
                 text.Append("\"url\":\"" + txtUrl.Text + "\"\r\n");
                 text.Append("}");
 
-                string sPathFile = Directory.GetCurrentDirectory() + $@"\{txtTitle.Text }.JSON";
+                string sPathFile = Directory.GetCurrentDirectory() + $@"\{txtTitle.Text.Replace(":", " ") }.JSON";
                 if (File.Exists(sPathFile))
                     File.Delete(sPathFile);
 
@@ -94,7 +94,7 @@ namespace FormatTextForJasomn
             }
             catch (Exception ex)
             {
-                MessageBox.Show(":(", "Erro: " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show( "Erro: " + ex.Message,":(", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

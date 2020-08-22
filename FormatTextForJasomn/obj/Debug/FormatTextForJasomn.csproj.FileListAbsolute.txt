@@ -1,7 +1,6 @@
 P:\FormatTextForJasomn\FormatTextForJasomn\bin\Debug\FormatTextForJasomn.exe.config
 P:\FormatTextForJasomn\FormatTextForJasomn\bin\Debug\FormatTextForJasomn.exe
 P:\FormatTextForJasomn\FormatTextForJasomn\bin\Debug\FormatTextForJasomn.pdb
-P:\FormatTextForJasomn\FormatTextForJasomn\obj\Debug\FormatTextForJasomn.csprojAssemblyReference.cache
 P:\FormatTextForJasomn\FormatTextForJasomn\obj\Debug\FormatTextForJasomn.FrmPrincipal.resources
 P:\FormatTextForJasomn\FormatTextForJasomn\obj\Debug\FormatTextForJasomn.Properties.Resources.resources
 P:\FormatTextForJasomn\FormatTextForJasomn\obj\Debug\FormatTextForJasomn.csproj.GenerateResource.cache
